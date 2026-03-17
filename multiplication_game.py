@@ -239,9 +239,10 @@ def advance_question(next_idx):
 
 # ── START SCREEN ──────────────────────────────────────────────────────────────
 if st.session_state.screen == "start":
-    st.title("⏱️ Multiplication Blitz")
+    st.title("⏱️ Mixed Facts Lightning Round")
     st.markdown("Answer **25 multiplication questions** as fast as you can. Wrong answers keep you on the same question until you get it right.")
     st.markdown("⚠️ **Multiple Choice:** each wrong answer adds a **+5 second penalty** to your final time.")
+    st.markdown("👇 If your time's fast enough you get on the **LEADERBOARD**.👇")
     st.divider()
 
     col1, col2 = st.columns(2)
@@ -355,6 +356,9 @@ elif st.session_state.screen == "result":
             f'({format_time(penalty)} added)</div>',
             unsafe_allow_html=True
         )
+
+    if rank and rank <= MAX_LEADERS:
+        st.balloons()
 
     if rank == 1:
         st.markdown('<div class="result-rank">🥇 New #1 all-time! Incredible!</div>', unsafe_allow_html=True)
