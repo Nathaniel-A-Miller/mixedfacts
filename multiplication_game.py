@@ -9,7 +9,7 @@ TOTAL_QUESTIONS = 25
 MAX_LEADERS = 10
 MC_PENALTY_SECONDS = 5
 
-st.set_page_config(page_title="Multiplication Blitz", page_icon="⏱️", layout="centered")
+st.set_page_config(page_title="Mixed Facts", page_icon="⏱️", layout="centered")
 
 # ── Supabase client ───────────────────────────────────────────────────────────
 @st.cache_resource
@@ -239,7 +239,7 @@ def advance_question(next_idx):
 
 # ── START SCREEN ──────────────────────────────────────────────────────────────
 if st.session_state.screen == "start":
-    st.title("⏱️ Mixed Facts Lightning Round⚡")
+    st.title("⏱️ Mixed Facts Lightning Round")
     st.markdown("Answer **25 multiplication questions** as fast as you can. Wrong answers keep you on the same question until you get it right.")
     st.markdown("⚠️ **Multiple Choice:** each wrong answer adds a **+5 second penalty** to your final time.")
     st.markdown("👇If you're fast enough you get on the **LEADERBOARD**.👇")
