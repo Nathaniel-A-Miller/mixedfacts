@@ -239,10 +239,9 @@ def advance_question(next_idx):
 
 # ── START SCREEN ──────────────────────────────────────────────────────────────
 if st.session_state.screen == "start":
-    st.title("⏱️ Mixed Facts Lightning Round")
+    st.title("⏱️ Multiplication Blitz")
     st.markdown("Answer **25 multiplication questions** as fast as you can. Wrong answers keep you on the same question until you get it right.")
     st.markdown("⚠️ **Multiple Choice:** each wrong answer adds a **+5 second penalty** to your final time.")
-    st.markdown("👇 If your time's fast enough you get on the **LEADERBOARD**.👇")
     st.divider()
 
     col1, col2 = st.columns(2)
@@ -332,11 +331,7 @@ elif st.session_state.screen == "game":
                         st.session_state.penalty_flash = True
                         st.rerun()
 
-    # Only auto-rerun (for live timer) in Type mode.
-    # MC mode must NOT auto-rerun — it causes duplicate button renders.
-    if st.session_state.mode == "Type":
-        time.sleep(0.5)
-        st.rerun()
+
 
 # ── RESULT SCREEN ─────────────────────────────────────────────────────────────
 elif st.session_state.screen == "result":
